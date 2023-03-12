@@ -16,7 +16,11 @@ For this section I chose to locally deploy an MNIST model using docker with an A
 
 ###Instructions: 
 
-Provided Docker is available on the system run: 
+In the section2 directory of this repo:
+
+Provided Docker is available on the system run: (If it is not download and install following instructions: 
+`https://docs.docker.com/get-docker/`)
+
 1. `docker build -t mnist-api .`
  - This will create a Docker image with the name mnist-api.
 
