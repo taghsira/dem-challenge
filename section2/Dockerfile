@@ -4,6 +4,7 @@ COPY requirements.txt /app
 RUN pip install -r requirements.txt
 COPY app.py /app
 COPY path/to/model.h5 /app
+ENTRYPOINT ["python"]
 CMD ["python", "app.py"]
 
 # FROM python:3.11 It goes to Docker Hub and downloads the base image from there

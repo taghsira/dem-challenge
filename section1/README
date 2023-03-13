@@ -1,0 +1,26 @@
+#Section 1
+
+##Problem Statement: 
+
+Provision one database of your choosing (SQL, NoSQL, Graph).  Write a python ETL that ingests the provided data, transforms it in some way, and loads it into the database. This should be reproducible code with documentation. (Terraform / Cloudformation / Ansible, docker-compose etc). 
+
+----
+
+##Answer:
+For this section I chose to locally deploy Postgres for the Database using an ansible script to generate the db locally. The table and ETL is done with a Python Script.
+This assumes the datafile is named the same as provided in the provided zip file and is in the same path as this repo and script, as it is hardcoded.
+The transform on the data is concatenating the first_name and last_name columns into a new column named full_name, then dropping the original first_name and last_name columns
+
+###Create the Database via Ansible by running:
+`ansible-playbook playbook.yml`
+
+###Create the Database via Ansible by running:
+`pip install -r requirements.txt`
+
+###Run the application:
+`python main.py`
+
+Once the script is executed, it will ingest the data, transform it, and load it into the PostgreSQL database as specified in the script. You can check the database and the db can be queried directly to ensure the data was loaded correctly.
+
+
+

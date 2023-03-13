@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  become: true
+  vars:
+    db_name: mydatabase
+    db_user: myuser
+    db_password: mypassword
+  tasks:
+    - name: Install PostgreSQL client
+      apt:
+        name: postgresql-client
+        state: present
+
+    - name: Create database
+      postgresql_db:
+        name: "{{ db_name }}"
+
+    - name: Create user
+      postgresql_user:
+        name: "{{ db_user }}"
+        password: "{{ db_password }}"
+        encrypted: yes
+
+    - name: Grant privileges to user
+      postgresql_privs:
+        database: "{{ db_name }}"
+        user: "{{ db_user }}"
+        priv: ALL
+        state: present
