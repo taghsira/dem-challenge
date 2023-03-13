@@ -3,7 +3,7 @@ WORKDIR /app
 COPY requirements.txt /app
 RUN pip install -r requirements.txt
 COPY app.py /app
-COPY path/to/model.h5 /app
+COPY model.h5 /app
 ENTRYPOINT ["python"]
 CMD ["python", "app.py"]
 
@@ -11,5 +11,5 @@ CMD ["python", "app.py"]
 # WORKDIR /app It creates a working directory within the instance, and a folder named app within the directory.
 # COPY requirements.txt /app. Copies in the working directory the requirements.txt file.
 # RUN pip install -r ./requirements.txt Installs all the required packages that requirements.txt file contains.
-# COPY app.py /app Copies in the working directory of the file app.py which contains the model.
+# COPY app.py and model file.
 # CMD ["python","app.py"] Runs the app.py file using the Python image.
