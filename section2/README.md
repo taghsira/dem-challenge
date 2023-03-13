@@ -9,10 +9,10 @@ Provide reproducible code with documentation for both deployment and usage.
 
 ----
 ##Answer:
-For this section I chose to locally deploy an MNIST model using docker with an API endpoint for usage. Keeping with the theme of using Python in section1, chose to use Flask 
+For this section chose to locally deploy an MNIST model using docker with an API endpoint for usage. Keeping with the theme of using Python in section1, chose to use Flask for serviing as the framework for the API Endpoint.
 
 ###Assumptions:
-- Model File already generated in any format supported by preferred frameworkvia TensorFlow, PyTorch, etc. 
+- Model File already generated in any format supported by preferred framework TensorFlow.
 
 ###Instructions: 
 
@@ -26,3 +26,5 @@ Provided Docker is available on the system run: (If it is not download and insta
 
 2. `docker run -p 8080:8080 mnist-api`
  - This will start the container and map port 8080 from the container to port 8080 on the machine this is run on. This will allow access to the API endpoint at `http://localhost:8080/predict`
+
+ 3. Use preferred tool like Postman to test the /predict route by sending a POST request with an image file.

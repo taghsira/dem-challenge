@@ -1,5 +1,6 @@
 flask
 numpy
 sklearn
+Pillow
 google-cloud-storage
 tensorflow
